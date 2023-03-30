@@ -1,0 +1,74 @@
+:root {
+    --main-colour: #114611;
+}
+
+* {
+    font-family: Quicksand;
+}
+
+header {
+    background-color: var(--main-colour);
+    text-align: center;
+    color: white;
+    display: flex;
+}
+
+
+h1 {
+    margin: auto;
+}
+
+#back-btn {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.variable {
+    color: #C7C8C7;
+}
+
+.weather-icon {
+    width: 80%;
+}
+
+.future-weather {
+    display: flex;
+}
+
+.today {
+ width: 265px;
+height: 265px;
+text-align: center;
+}
+
+.today img {
+    width: 100px;
+}
+
+.card-title {
+    color: black !important;
+    text-shadow: 2px 3px 1px rgba(127, 128, 127, 0.7);
+}
+
+.card-content > p {
+    font-size: 20px;
+}
+
+.weather-results > p {
+    font-size: 20px;
+}
+
+footer {
+    background-color: var(--main-colour);
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+}
