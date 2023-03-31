@@ -27,6 +27,13 @@ h1 {
 
 h2 {
     text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    font-size: 35px;
 }
 
 .variable {
@@ -34,21 +41,25 @@ h2 {
 }
 
 .weather-icon {
-    width: 80%;
+    width: 50%;
 }
 
 .future-weather {
     display: flex;
+    justify-content: space-between;
 }
 
 .today {
- width: 265px;
-height: 265px;
-text-align: center;
+    text-align: center;
+    width: 50%;
 }
 
 .today img {
-    width: 100px;
+    width: 10%;
+}
+
+.weather-results > p {
+    font-size: 18px;
 }
 
 .card-title {
@@ -56,12 +67,8 @@ text-align: center;
     text-shadow: 2px 3px 1px rgba(127, 128, 127, 0.7);
 }
 
-.card-content > p {
-    font-size: 20px;
-}
-
-.weather-results > p {
-    font-size: 20px;
+.card-content>p {
+    font-size: 18px;
 }
 
 footer {
@@ -71,4 +78,10 @@ footer {
     bottom: 0px;
     height: 30px;
     width: 100%;
+}
+
+#weather-results {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
