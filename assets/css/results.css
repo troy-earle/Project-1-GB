@@ -1,0 +1,87 @@
+:root {
+    --main-colour: #114611;
+}
+
+* {
+    font-family: Quicksand;
+}
+
+header {
+    background-color: var(--main-colour);
+    text-align: center;
+    color: white;
+    display: flex;
+}
+
+
+h1 {
+    margin: auto;
+}
+
+#back-btn {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.variable {
+    color: #C7C8C7;
+}
+
+.weather-icon {
+    width: 50%;
+}
+
+.future-weather {
+    display: flex;
+    justify-content: space-between;
+}
+
+.today {
+    text-align: center;
+    width: 50%;
+}
+
+.today img {
+    width: 10%;
+}
+
+.weather-results > p {
+    font-size: 18px;
+}
+
+.card-title {
+    color: black !important;
+    text-shadow: 2px 3px 1px rgba(127, 128, 127, 0.7);
+}
+
+.card-content>p {
+    font-size: 18px;
+}
+
+footer {
+    background-color: var(--main-colour);
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+}
+
+#weather-results {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

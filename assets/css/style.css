@@ -1,0 +1,71 @@
+:root {
+    --main-colour: #114611;
+}
+
+* {
+    font-family: Quicksand;
+}
+
+header {
+    background-color: var(--main-colour);
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
+
+body {
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/hiking-quotes-1586278882.jpg?crop=1.00xw:0.751xh;0,0.192xh&resize=1200:*");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+}
+
+main {
+    display: inline;
+}
+
+img {
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#search {
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 0 5px 0 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.input-field {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    height: 44.7px;
+    background-color: var(--main-colour);
+}
+
+.btn:hover{
+    background-color: var(--main-colour);
+}
+
+footer {
+    background-color: var(--main-colour);
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+}
+
