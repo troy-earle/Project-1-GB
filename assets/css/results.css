@@ -5,24 +5,22 @@
 * {
     font-family: Quicksand;
 }
-
 header {
     background-color: var(--main-colour);
     text-align: center;
     color: white;
-    display: flex;
 }
 
-
-h1 {
-    margin: auto;
+#logo {
+    width: 10%;
 }
 
 #back-btn {
     color: white;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
+    display: inline;
+    position: relative;
+    right: 820px;
+    bottom: 30px;
 }
 
 h2 {
