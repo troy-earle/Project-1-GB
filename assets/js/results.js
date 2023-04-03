@@ -1,6 +1,22 @@
 var cityName = localStorage.getItem("cityName");
 var weatherData = [];
 
+var citySpan = document.querySelectorAll(".variable");
+var cityP = document.createElement("p");
+
+// for(i=0; i<3; i++) {
+
+//     cityP[i].textContent = cityName;
+// }
+
+// cityP.textContent = cityName;
+
+// citySpan.appendChild(cityP);
+
+cityP[0].innerHTML = cityName;
+
+document.body.appendChild(citySpan);
+
 console.log(cityName);
 
 
