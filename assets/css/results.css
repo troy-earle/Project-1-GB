@@ -12,7 +12,7 @@ header {
 }
 
 #logo {
-    width: 10%;
+    width: 10rem;
 }
 
 #back-btn {
@@ -35,11 +35,11 @@ h3 {
 }
 
 .variable, .city-name {
-    color: #C7C8C7;
+    color: #3D7835;
 }
 
 .weather-icon {
-    width: 50%;
+    width: 80%;
 }
 
 .future-weather {
@@ -58,6 +58,10 @@ h3 {
 
 .weather-results > p {
     font-size: 18px;
+}
+
+.weather-card {
+    margin: 0 40px 0 40px;
 }
 
 .card-title {
@@ -82,4 +86,10 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    #weather-results {
+        margin: 0 20px 0 20px;
+    }
 }

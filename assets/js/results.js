@@ -83,7 +83,8 @@ function displayWeather (weatherData) {
 
     todayEl.textContent = "Today";
     todayTempEl.textContent = "Max: " + weatherData[0].maxTemp;
-    todayIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[0].weatherIcon + "@2x.png")
+    todayIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[0].weatherIcon + "@2x.png");
+    todayIconEl.setAttribute("alt", "weather icon");
     todayUVEl.textContent = "UV: " + weatherData[0].UV;
     todayRainEl.textContent = "Rain: " + weatherData[0].rain;
 
@@ -103,11 +104,13 @@ function displayWeather (weatherData) {
         var uvEl = document.createElement("p");
         var rainEl = document.createElement("p");
 
+        divEl.setAttribute("class", "weather-card")
         iconEl.setAttribute("class", "weather-icon");
 
         dayEl.textContent = dayjs().add(i, 'day').format("ddd");
         tempEl.textContent = "Max: " + weatherData[i].maxTemp;
-        iconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[i].weatherIcon + "@2x.png")
+        iconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[i].weatherIcon + "@2x.png");
+        iconEl.setAttribute("alt", "weather icon");
         uvEl.textContent = "UV: " + weatherData[i].UV;
         rainEl.textContent = "Rain: " + weatherData[i].rain;
 
