@@ -34,7 +34,7 @@ h3 {
     font-size: 35px;
 }
 
-.variable {
+.variable, .city-name {
     color: #C7C8C7;
 }
 
