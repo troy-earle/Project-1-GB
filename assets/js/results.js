@@ -1,6 +1,15 @@
 var cityName = localStorage.getItem("cityName");
 var citySpan = document.querySelectorAll(".city-name");
+var weatherDiv = document.querySelector("#weather-results")
+var todayWeatherDiv = document.querySelector("#today");
+var futureWeatherDiv = document.querySelector(".future-weather");
+var trailsDiv = document.querySelector(".trail-data");
+
+var trailList = JSON.parse(localStorage.getItem("trailList")) || [];
+var trailsResponse = [];
 var weatherData = [];
+var lat;
+var lon;
 
 //making the first letter of the seached city capital
 var firstLetter = cityName.charAt(0);
@@ -12,10 +21,181 @@ var capitalWord = firstLetterCap + remainingLetters;
 for(i = 0; i < 3; i++) {
     citySpan[i].textContent = capitalWord;
 }
+getTrailInfo();
 
-var lat = -37.8142176;
-var lon = 144.9631608;
 
+
+function getTrailInfo () {
+    trailList = [];
+
+    trailsResponse = [
+        trail = {
+            "myTrails": {
+                "trail": {
+                    "name": {
+                        "__cdata": "Sample Trail1"
+                    },
+                    "description": {
+                        "__cdata": "Sample Description1"
+                    },
+                    "owner": {
+                        "__cdata": "SampleUser"
+                    },
+                    "lat": -37.740822,
+                    "lon": 145.136719,
+                    "externalLink": {
+                        "__cdata": "https://mytrails.com.au/1000000"
+                    },
+                    "filePath": "/trails/1000000/1000000000.xml",
+                    "distanceKms": 31.75,
+                    "terrain": "Off Road",
+                    "mode": "Mountain Bike",
+                    "views": 140
+                },
+                "marker": {
+                    "name": {
+                        "__cdata": "Sample Marker"
+                    },
+                    "description": {
+                        "__cdata": "Sample Description"
+                    },
+                    "owner": {
+                        "__cdata": "SampleUser"
+                    },
+                    "lat": -37.796441,
+                    "lon": 145.000262,
+                    "externalLink": {
+                        "__cdata": "https://mytrails.com.au/search-location/37.79,145.00"
+                    }
+                }
+            }
+        },
+        trail = {
+            "myTrails": {
+                "trail": {
+                    "name": {
+                        "__cdata": "Sample Trail2"
+                    },
+                    "description": {
+                        "__cdata": "Sample Description2"
+                    },
+                    "owner": {
+                        "__cdata": "SampleUser"
+                    },
+                    "lat": -37.740822,
+                    "lon": 145.136719,
+                    "externalLink": {
+                        "__cdata": "https://mytrails.com.au/1000000"
+                    },
+                    "filePath": "/trails/1000000/1000000000.xml",
+                    "distanceKms": 31.75,
+                    "terrain": "Off Road",
+                    "mode": "Mountain Bike",
+                    "views": 140
+                },
+                "marker": {
+                    "name": {
+                        "__cdata": "Sample Marker"
+                    },
+                    "description": {
+                        "__cdata": "Sample Description"
+                    },
+                    "owner": {
+                        "__cdata": "SampleUser"
+                    },
+                    "lat": -37.796441,
+                    "lon": 145.000262,
+                    "externalLink": {
+                        "__cdata": "https://mytrails.com.au/search-location/37.79,145.00"
+                    }
+                }
+            }
+        }
+    ]
+
+    lat = trail.myTrails.trail.lat;
+    lon = trail.myTrails.trail.lon;
+
+    
+
+    for (i = 0; i < trailsResponse.length; i++) {
+        var trailName = trailsResponse[i].myTrails.trail.name.__cdata;
+        var distance = trailsResponse[i].myTrails.trail.distanceKms;
+        var trailDescription = trailsResponse[i].myTrails.trail.description.__cdata;
+        var trailTerrain = trailsResponse[i].myTrails.trail.terrain;
+        var trailMode = trailsResponse[i].myTrails.trail.mode;
+
+        var trailInfo = {
+            name: trailName,
+            distance: distance,
+            description: trailDescription,
+            terrain: trailTerrain,
+            mode: trailMode,
+            trailNumber: i + 1
+        }
+
+        trailList.push(trailInfo);
+        localStorage.setItem("trailList", JSON.stringify(trailList));
+
+    }
+    displayTrails()
+}
+
+function displayTrails() {
+    for (i = 0; i < trailsResponse.length; i++) {
+        var divCol = document.createElement("div");
+        divCol.setAttribute("class", "col s12 m6 l3");
+        var card = document.createElement("div");
+        card.setAttribute("class", "card");
+        var cardImg = document.createElement("div");
+        cardImg.setAttribute("class", "card-image");
+
+        var trailImg = document.createElement("img");
+        trailImg.setAttribute("src", "./assets/images/Screenshot 2023-03-30 at 12.42.35.png");
+        cardImg.appendChild(trailImg);
+        card.appendChild(cardImg);
+
+        var cardTitle = document.createElement("span");
+        cardTitle.setAttribute("class", "card-title");
+        cardTitle.textContent = trailList[i].name;
+        cardImg.appendChild(cardTitle);
+        card.appendChild(cardImg);
+
+        var cardContent = document.createElement("div");
+        cardContent.setAttribute("class", "card-content");
+        var trailDistance = document.createElement("p");
+        trailDistance.textContent = trailList[i].distance + "km";
+        cardContent.appendChild(trailDistance);
+        card.appendChild(cardContent);
+
+        var cardAction = document.createElement("div");
+        cardAction.setAttribute("class", "card-action");
+        var info = document.createElement("a");
+        // info.setAttribute("href", "./details.html");
+        info.setAttribute("data-trail", trailList[i].trailNumber);
+        info.setAttribute("class", "info-button");
+        // info.setAttribute("id", trailList[i].trailNumber);
+        info.textContent = "See more info";
+        cardAction.appendChild(info);
+        card.appendChild(cardAction);
+
+
+        divCol.appendChild(card);
+        trailsDiv.appendChild(divCol);
+    }
+}
+
+var button = document.querySelectorAll(".info-button");
+for (j = 0; j <=0; j++) {
+    // button[j] = document.getElementById("#j+1");
+    button[0].addEventListener("click", function () {
+        var element = event.target;
+        
+        var trailNum = trailList[j-1].trailNumber;;
+        trailList.push(trailNum);
+        console.log(trailList);
+    })
+}
 
 fetch("https://api.open-meteo.com/v1/forecast?latitude="+ lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_sum,rain_sum,showers_sum,precipitation_hours,precipitation_probability_max&timeformat=unixtime&timezone=Australia%2FSydney")
     .then( function (response) {
@@ -64,11 +244,6 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude="+ lat + "&longitude=" + 
         }
         displayWeather(weatherData);
     })
-
-
-var weatherDiv = document.querySelector("#weather-results")
-var todayWeatherDiv = document.querySelector("#today");
-var futureWeatherDiv = document.querySelector(".future-weather");
 
 
 function displayWeather (weatherData) {
