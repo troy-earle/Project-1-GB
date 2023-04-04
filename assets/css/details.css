@@ -10,18 +10,32 @@ header {
     background-color: var(--main-colour);
     text-align: center;
     color: white;
+    display: flex;
+    justify-content: space-between;
 }
 
 #logo {
     width: 10rem;
 }
 
-#back-btn {
+.button {
     color: white;
-    display: inline;
-    position: relative;
-    right: 820px;
-    bottom: 30px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icons {
+    display: flex;
+}
+
+#home-btn {
+    margin-right: 30px;
+}
+
+#about-us-icon {
+    margin-right: 25px;
 }
 
 h2 {
