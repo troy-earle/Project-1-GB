@@ -1,10 +1,23 @@
 var cityName = localStorage.getItem("cityName");
+var citySpan = document.querySelectorAll(".city-name");
 var weatherData = [];
 
-console.log(cityName);
+//making the first letter of the seached city capital
+var firstLetter = cityName.charAt(0);
+var firstLetterCap = firstLetter.toUpperCase();
+var remainingLetters = cityName.slice(1);
+var capitalWord = firstLetterCap + remainingLetters;
+
+//appending the city name to the document in the relevant places
+for(i = 0; i < 3; i++) {
+    citySpan[i].textContent = capitalWord;
+}
+
+var lat = -37.8142176;
+var lon = 144.9631608;
 
 
-fetch("https://api.open-meteo.com/v1/forecast?latitude=-37.81&longitude=144.96&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_sum,rain_sum,showers_sum,precipitation_hours,precipitation_probability_max&timeformat=unixtime&timezone=Australia%2FSydney")
+fetch("https://api.open-meteo.com/v1/forecast?latitude="+ lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_sum,rain_sum,showers_sum,precipitation_hours,precipitation_probability_max&timeformat=unixtime&timezone=Australia%2FSydney")
     .then( function (response) {
         return response.json();
     })
@@ -70,7 +83,8 @@ function displayWeather (weatherData) {
 
     todayEl.textContent = "Today";
     todayTempEl.textContent = "Max: " + weatherData[0].maxTemp;
-    todayIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[0].weatherIcon + "@2x.png")
+    todayIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[0].weatherIcon + "@2x.png");
+    todayIconEl.setAttribute("alt", "weather icon");
     todayUVEl.textContent = "UV: " + weatherData[0].UV;
     todayRainEl.textContent = "Rain: " + weatherData[0].rain;
 
@@ -90,11 +104,13 @@ function displayWeather (weatherData) {
         var uvEl = document.createElement("p");
         var rainEl = document.createElement("p");
 
+        divEl.setAttribute("class", "weather-card")
         iconEl.setAttribute("class", "weather-icon");
 
         dayEl.textContent = dayjs().add(i, 'day').format("ddd");
         tempEl.textContent = "Max: " + weatherData[i].maxTemp;
-        iconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[i].weatherIcon + "@2x.png")
+        iconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherData[i].weatherIcon + "@2x.png");
+        iconEl.setAttribute("alt", "weather icon");
         uvEl.textContent = "UV: " + weatherData[i].UV;
         rainEl.textContent = "Rain: " + weatherData[i].rain;
 
