@@ -43,22 +43,8 @@ header {
     color: var(--main-colour);
 }
 
-.about { 
-    word-spacing: 100px;
-    margin-left: 100px;
-    width: 40px;
-}
-
-
-.Home {
-  width: 30px;
-  height: 30px;
-  margin-right: 40px;
-}
-
-
-h1 {
-    margin: auto;
+main {
+    margin-left: 10px;
 }
 
 h2 {
@@ -75,15 +61,5 @@ footer {
     bottom: 0px;
     height: 30px;
     width: 100%;
-}
-
-#about-trail {
-    width: 50%;
-    margin: 0 auto;
-}
-
-#trail-info {
-    display: flex;
-    justify-content: space-between;
 }
 
