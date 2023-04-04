@@ -13,16 +13,12 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 5px;
-      
-      
-      
+    padding: 5px; 
 }
 
 main {
     display: inline;
 }
-
 
 img {
     display: block;
@@ -32,12 +28,10 @@ img {
     width: 20%;
 }
 
-
 #logo {
     margin-left: 550px;
-    width: 15%;
+    width: 10rem;
 }
-
 
 .about { 
     word-spacing: 100px;
@@ -56,7 +50,6 @@ img {
 h1 {
     margin: auto;
 }
-
 
 h2 {
     text-align: center;
