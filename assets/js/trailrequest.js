@@ -1,5 +1,5 @@
 // replace with the desired city name as Variable when ready
-var cityname = localStorage.getItem("cityName"); 
+var cityname = localStorage.getItem("cityName");
 const API_KEY = "70c3ec3c05e94d6f9c086c8a16d8a940";
 var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) || [];
 
@@ -23,7 +23,7 @@ fetch(`https://api.opencagedata.com/geocode/v1/json?q=${cityname}&key=${API_KEY}
     localStorage.setItem("storedCoordinates", JSON.stringify(storedCoordinates));
 
 
-   
+
 
     // load Outdooractive Javascript API
     var oa_api = document.createElement('script');
@@ -33,16 +33,17 @@ fetch(`https://api.opencagedata.com/geocode/v1/json?q=${cityname}&key=${API_KEY}
 
     // create configuration object for FlexView API
     var conf = {
-      frontendtype:   "tour",          // choose content type
-      zoom:           11,              // set initial zoom level
-      center:         [lon, lat]       // set initial map center
+      frontendtype: "tour",          // choose content type
+      zoom: 11,              // set initial zoom level
+      center: [lon, lat]       // set initial map center
     };
 
     // initialize FlexView API
-        var fvp = oa.api.flexviewpage(conf);
+    var fvp = oa.api.flexviewpage(conf);
 
   })
   .catch(error => console.error(error));
+
 
 
 
