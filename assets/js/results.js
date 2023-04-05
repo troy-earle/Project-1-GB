@@ -1,13 +1,14 @@
 var cityName = localStorage.getItem("cityName");
 var citySpan = document.querySelectorAll(".city-name");
+var weatherDiv = document.querySelector("#weather-results")
+var todayWeatherDiv = document.querySelector("#today");
+var futureWeatherDiv = document.querySelector(".future-weather");
 var weatherData = [];
 var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) || []
 
 //getting lat and lon for weather api
 var lat = storedCoordinates[0].lat;
 var lon = storedCoordinates[0].lon;
-
-// const API_KEY = "70c3ec3c05e94d6f9c086c8a16d8a940";
 
 //making the first letter of the seached city capital
 var firstLetter = cityName.charAt(0);
@@ -69,11 +70,6 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude="+ lat + "&longitude=" + 
     })
 
 
-var weatherDiv = document.querySelector("#weather-results")
-var todayWeatherDiv = document.querySelector("#today");
-var futureWeatherDiv = document.querySelector(".future-weather");
-
-
 function displayWeather (weatherData) {
 
     var todayEl = document.createElement("h5");
@@ -128,10 +124,5 @@ function displayWeather (weatherData) {
 
 
     }
-    
-
-
-    
-
 
 }
