@@ -129,4 +129,4 @@ window.setTimeout(function () {
 
         }
     }
-}, 800);
+}, 1400);
