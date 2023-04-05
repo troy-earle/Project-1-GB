@@ -1,5 +1,6 @@
 var cityName = localStorage.getItem("cityName");
 var citySpan = document.querySelectorAll(".city-name");
+var trailSpan = document.querySelector("#trail-number")
 var weatherDiv = document.querySelector("#weather-results")
 var todayWeatherDiv = document.querySelector("#today");
 var futureWeatherDiv = document.querySelector(".future-weather");
@@ -11,6 +12,8 @@ var weatherData = [];
 var lat;
 var lon;
 
+trailSpan.textContent = trailList.length;
+
 //making the first letter of the seached city capital
 var firstLetter = cityName.charAt(0);
 var firstLetterCap = firstLetter.toUpperCase();
@@ -21,9 +24,8 @@ var capitalWord = firstLetterCap + remainingLetters;
 for(i = 0; i < 3; i++) {
     citySpan[i].textContent = capitalWord;
 }
+
 getTrailInfo();
-
-
 
 function getTrailInfo () {
     trailList = [];
@@ -138,6 +140,7 @@ function getTrailInfo () {
         localStorage.setItem("trailList", JSON.stringify(trailList));
 
     }
+
     displayTrails()
 }
 
@@ -171,10 +174,9 @@ function displayTrails() {
         var cardAction = document.createElement("div");
         cardAction.setAttribute("class", "card-action");
         var info = document.createElement("a");
-        // info.setAttribute("href", "./details.html");
+        info.setAttribute("href", "./details.html");
         info.setAttribute("data-trail", trailList[i].trailNumber);
         info.setAttribute("class", "info-button");
-        // info.setAttribute("id", trailList[i].trailNumber);
         info.textContent = "See more info";
         cardAction.appendChild(info);
         card.appendChild(cardAction);
@@ -186,14 +188,13 @@ function displayTrails() {
 }
 
 var button = document.querySelectorAll(".info-button");
-for (j = 0; j <=0; j++) {
-    // button[j] = document.getElementById("#j+1");
-    button[0].addEventListener("click", function () {
+for (j = 0; j < trailList.length; j++) {
+    button[j].addEventListener("click", function (event) {
         var element = event.target;
-        
-        var trailNum = trailList[j-1].trailNumber;;
+        var trailNum = element.getAttribute("data-trail");
+
         trailList.push(trailNum);
-        console.log(trailList);
+        localStorage.setItem("trailList", JSON.stringify(trailList));
     })
 }
 
