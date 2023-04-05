@@ -30,7 +30,7 @@
 
     <h2> <span class="variable">x</span> results found for location <span class="city-name"></span></h2>
 
-    <h3>Weather for location <span class="city-name"></span>:</h3>
+    <h3>Weather for location <span class="city-name"></span></h3>
 
     <div id="weather-results">
         <div id="today" class="weather-card">
@@ -41,75 +41,27 @@
         </div>
     </div>
 
-    <h3>Trails found around location <span class="city-name"></span>:</h3>
-
-    <div class="row">
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class= "map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class="map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class="map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class="map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer></footer>
     <script src="./assets/js/results.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <h3>Trails found around location <span class="city-name"></span></h3>
+
+    <!-- container used by FlexView API -->
+    <div class="oax-top-cont"></div>
+
+    <!-- Outdooractive Javascript -->
+    <script type="text/javascript" src="https://api-oa.com/jscr/oa_head.js?proj=api-dev-oa&amp;key=yourtest-outdoora-ctiveapi&amp;lang=en"></script>
+    <script type="text/javascript" src="./assets/js/trailrequest.js"></script>
+    <script type="text/javascript">
+        const cityNameElementList = document.querySelectorAll('.city-name');
+        for (let cityNameElement of cityNameElementList) {
+        cityNameElement.innerText = cityname;
+        }
+</script>
+
 </body>
 
 </html>
