@@ -1,5 +1,5 @@
 // replace with the desired city name as Variable when ready
-var cityname = localStorage.getItem("cityname"); 
+var cityname = localStorage.getItem("cityName"); 
 const API_KEY = "70c3ec3c05e94d6f9c086c8a16d8a940";
 var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) || [];
 
