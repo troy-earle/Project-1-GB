@@ -16,7 +16,6 @@ header {
 
 #logo {
     width: 10rem;
-    /* margin: 0; */
 }
 
 .button {
@@ -95,3 +94,11 @@ footer {
     width: 100%;
 }
 
+
+
+@media screen and (max-width: 992px) {
+    .input-field {
+        width: 90%;
+
+    }
+}

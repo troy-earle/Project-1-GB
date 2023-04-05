@@ -3,6 +3,7 @@ var citySpan = document.querySelectorAll(".city-name");
 var weatherData = [];
 var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) || []
 
+//getting lat and lon for weather api
 var lat = storedCoordinates[0].lat;
 var lon = storedCoordinates[0].lon;
 
