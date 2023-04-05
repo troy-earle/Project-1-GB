@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <a id="back-btn" class="button" href="./results.html">
+        <a id="back-btn" class="button" href="./index.html">
             <i class="small material-icons">arrow_back</i></a>
         <img id="logo" src="./assets/images/Trail Blaze Logo 4.png">
         <div id="icons">
@@ -28,9 +28,9 @@
         </div>
     </header>
 
-    <h2> <span class="variable">x</span> results found for location <span class="city-name"></span></h2>
+    <h2> <span id="trail-number" class="variable"></span> results found for location <span class="city-name variable"></span></h2>
 
-    <h3>Weather for location <span class="city-name"></span>:</h3>
+    <h3>Weather for location <span class="city-name variable"></span>:</h3>
 
     <div id="weather-results">
         <div id="today" class="weather-card">
@@ -41,68 +41,10 @@
         </div>
     </div>
 
-    <h3>Trails found around location <span class="city-name"></span>:</h3>
+    <h3>Trails found around location <span class="city-name variable"></span>:</h3>
 
-    <div class="row">
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class= "map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class="map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class="map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col s12 m6 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img class="map-image" src="./assets/images/Screenshot 2023-03-30 at 12.42.35.png">
-                    <span class="card-title">Stonemasons Track</span>
-                </div>
-                <div class="card-content">
-                    <p>Difficulty: ★ 4.4</p>
-                </div>
-                <div class="card-action">
-                    <a href="./details.html">See more info</a>
-                </div>
-            </div>
-        </div>
+    <div class="row trail-data">
+        
     </div>
 
     <footer></footer>
