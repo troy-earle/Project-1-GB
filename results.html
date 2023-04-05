@@ -41,17 +41,28 @@
         </div>
     </div>
 
-    <h3>Trails found around location <span class="city-name variable"></span>:</h3>
-
-    <div class="row trail-data">
-        
-    </div>
-
     <footer></footer>
     <script src="./assets/js/results.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <h3>Trails found around location <span class="city-name"></span></h3>
+
+    <!-- container used by FlexView API -->
+    <div class="oax-top-cont"></div>
+
+    <!-- Outdooractive Javascript -->
+    <script type="text/javascript" src="https://api-oa.com/jscr/oa_head.js?proj=api-dev-oa&amp;key=yourtest-outdoora-ctiveapi&amp;lang=en"></script>
+    <script type="text/javascript" src="./assets/js/trailrequest.js"></script>
+    <script type="text/javascript">
+        const cityNameElementList = document.querySelectorAll('.city-name');
+        for (let cityNameElement of cityNameElementList) {
+        cityNameElement.innerText = cityname;
+        }
+    </script>
+    <script src="./assets/js/results.js"></script>
+
 </body>
 
 </html>
