@@ -1,7 +1,12 @@
 var cityName = localStorage.getItem("cityName");
 var citySpan = document.querySelectorAll(".city-name");
 var weatherData = [];
-const API_KEY = "70c3ec3c05e94d6f9c086c8a16d8a940";
+var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) || []
+
+var lat = storedCoordinates[0].lat;
+var lon = storedCoordinates[0].lon;
+
+// const API_KEY = "70c3ec3c05e94d6f9c086c8a16d8a940";
 
 //making the first letter of the seached city capital
 var firstLetter = cityName.charAt(0);
