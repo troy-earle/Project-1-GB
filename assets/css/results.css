@@ -49,7 +49,7 @@ h3 {
     font-size: 35px;
 }
 
-.variable {
+.city-name {
     color: #3D7835;
 }
 
@@ -67,25 +67,12 @@ h3 {
     width: 50%;
 }
 
-.today img {
-    width: 10%;
-}
-
 .weather-results > p {
     font-size: 18px;
 }
 
 .weather-card {
     margin: 0 40px 0 40px;
-}
-
-.card-title {
-    color: black !important;
-    text-shadow: 2px 3px 1px rgba(127, 128, 127, 0.7);
-}
-
-.card-content>p {
-    font-size: 18px;
 }
 
 footer {
