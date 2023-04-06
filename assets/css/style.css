@@ -95,7 +95,7 @@ footer {
 }
 
 
-
+/*stops the input field and search  button from becoming unreadable for a screen of a certain size*/
 @media screen and (max-width: 992px) {
     .input-field {
         width: 90%;

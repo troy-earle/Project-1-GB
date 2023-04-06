@@ -7,8 +7,6 @@ var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) ||
 fetch(`https://api.opencagedata.com/geocode/v1/json?q=${cityname}&key=${API_KEY}`)
   .then(response => response.json())
   .then(data => {
-    console.log("data");
-    console.log(data.results[0]);
 
     // Get the latitude and longitude of the city from the API response
     lat = data.results[0].geometry.lat;
@@ -21,9 +19,6 @@ fetch(`https://api.opencagedata.com/geocode/v1/json?q=${cityname}&key=${API_KEY}
 
     storedCoordinates.push(coordinates);
     localStorage.setItem("storedCoordinates", JSON.stringify(storedCoordinates));
-
-
-
 
     // load Outdooractive Javascript API
     var oa_api = document.createElement('script');

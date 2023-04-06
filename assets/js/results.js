@@ -1,7 +1,11 @@
+//timeout function used to stop results.js from not loading if it doesn't have the lat and lon from trailrequest.js because it is taking too long
 window.setTimeout(function () {
 
     var cityName = localStorage.getItem("cityName");
     var citySpan = document.querySelectorAll(".city-name");
+    var weatherDiv = document.querySelector("#weather-results")
+    var todayWeatherDiv = document.querySelector("#today");
+    var futureWeatherDiv = document.querySelector(".future-weather");
     var weatherData = [];
     var storedCoordinates = JSON.parse(localStorage.getItem("storedCoordinates")) || []
 
@@ -36,6 +40,7 @@ window.setTimeout(function () {
 
                 var dailyWeatherIcon;
 
+                //using the weather code from the weather api and converting it into an icon code from open weather  icon url so the website can display icons
                 if (dailyWeatherCode === 0) {
                     dailyWeatherIcon = "01d";
                 } else if (dailyWeatherCode === 1 || dailyWeatherCode === 2) {
@@ -68,14 +73,9 @@ window.setTimeout(function () {
             displayWeather(weatherData);
         })
 
-
-    var weatherDiv = document.querySelector("#weather-results")
-    var todayWeatherDiv = document.querySelector("#today");
-    var futureWeatherDiv = document.querySelector(".future-weather");
-
-
     function displayWeather(weatherData) {
 
+        //creating elements to store todays weather in
         var todayEl = document.createElement("h5");
         var todayTempEl = document.createElement("p");
         var todayIconEl = document.createElement("img");
@@ -99,6 +99,7 @@ window.setTimeout(function () {
 
         weatherDiv.appendChild(todayWeatherDiv);
 
+        //creating elements from the next 6 days weather
         for (i = 1; i < 7; i++) {
             var divEl = document.createElement("div");
             var dayEl = document.createElement("h5");
@@ -129,4 +130,4 @@ window.setTimeout(function () {
 
         }
     }
-}, 800);
+}, 1400);
